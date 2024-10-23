@@ -1,0 +1,98 @@
+[
+  {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "value": "f",
+        "purpose": "commenting"
+      },
+      {
+        "type": "TextualBody",
+        "value": "TI-RADS 5",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "http://localhost:3000/result/undefined",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"63833.0859375,20229.95703125 63606.4140625,19247.875 83895.6171875,17382.537109375 85554.8828125,40124.796875 69800.875,39311.65625 64572.99609375,33020.8203125 64572.99609375,33040.43359375 64537.6171875,32859.73046875\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#c06370e8-eeda-4ad5-9c6a-bde10b7ca7a5"
+  },
+  {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "value": "f",
+        "purpose": "commenting"
+      },
+      {
+        "type": "TextualBody",
+        "value": "TI-RADS 5",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "http://localhost:3000/result/undefined",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"107007.5234375,28102.677734375 106877.953125,30273.9140625 118791.8828125,28336.63671875 118048.171875,14374.390625 108125.953125,12838.45703125 108668.9921875,12838.45703125 108501.4140625,12734.6015625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#3dd0168e-4b80-4dd9-bd57-d547bde64d22"
+  },
+  {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "value": "g",
+        "purpose": "commenting"
+      },
+      {
+        "type": "TextualBody",
+        "value": "TI-RADS 1",
+        "purpose": "tagging"
+      }
+    ],
+    "target": {
+      "source": "http://localhost:3000/result/undefined",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"229.57498168945312,360.68328857421875 268.7510070800781,192.066650390625 498.6916198730469,342.8166198730469 406.00830078125,491.3332824707031 251.90830993652344,442.199951171875 295.45831298828125,389.71661376953125 295.45831298828125,389.71661376953125\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#316d277a-c5c0-4539-a261-7eac7e596e39"
+  },
+  {
+    "type": "Annotation",
+    "body": [
+      {
+        "type": "TextualBody",
+        "value": "TI-RADS 2",
+        "purpose": "tagging"
+      },
+      {
+        "type": "TextualBody",
+        "value": "h",
+        "purpose": "commenting"
+      }
+    ],
+    "target": {
+      "source": "http://localhost:3000/result/undefined",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"619.530029296875,269.5249938964844 777.7899780273438,268.6064453125 838.5850219726562,392.0799865722656 749.8049926757812,436.49859619140625 592.510009765625,371.64495849609375 644.6199951171875,347.69000244140625\"></polygon></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "#25896947-a297-45ae-9248-62b9215bb425"
+  }
+]

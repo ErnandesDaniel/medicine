@@ -1,0 +1,58 @@
+function downloadURI(uri, name) {
+        var link = document.createElement('a');
+        link.download = name;
+        link.href = uri;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+     <Stack direction="row" spacing={1} sx={{paddingTop: 1}}>
+                            <Chip label="TI-RADS 1" clickable={true} sx={{color: this.state.tiradsType[0]? '#ffffff' : '#4fb3ea', borderColor: '#4fb3ea', backgroundColor: !this.state.tiradsType[0]? '#ffffff' : '#4fb3ea'}} variant={this.state.tiradsType[0]? "standard" : "outlined"} onClick={this.handleClick1}/>
+                            <Chip label="TI-RADS 2" clickable={true} sx={{color: this.state.tiradsType[1]? '#ffffff' : '#4fb3ea', borderColor: '#4fb3ea', backgroundColor: !this.state.tiradsType[1]? '#ffffff' : '#4fb3ea'}} variant={this.state.tiradsType[1]? "filled" : "outlined"} onClick={this.handleClick2}/>
+                            <Chip label="TI-RADS 3" clickable={true} sx={{color: this.state.tiradsType[2]? '#ffffff' : '#4fb3ea', borderColor: '#4fb3ea', backgroundColor: !this.state.tiradsType[2]? '#ffffff' : '#4fb3ea'}} variant={this.state.tiradsType[2]? "filled" : "outlined"} onClick={this.handleClick3}/>
+                            <Chip label="TI-RADS 4" clickable={true} sx={{color: this.state.tiradsType[3]? '#ffffff' : '#4fb3ea', borderColor: '#4fb3ea', backgroundColor: !this.state.tiradsType[3]? '#ffffff' : '#4fb3ea'}} variant={this.state.tiradsType[3]? "filled" : "outlined"} onClick={this.handleClick4}/>
+                            <Chip label="TI-RADS 5" clickable={true} sx={{color: this.state.tiradsType[4]? '#ffffff' : '#4fb3ea', borderColor: '#4fb3ea', backgroundColor: !this.state.tiradsType[4]? '#ffffff' : '#4fb3ea'}} variant={this.state.tiradsType[4]? "filled" : "outlined"} onClick={this.handleClick5}/>
+                            {/*        <Chip label="TI-RADS 1" sx={{color: !this.state.tiradsType[0]? '#949494' : '#4fb3ea', borderColor: !this.state.tiradsType[0]? '#949494' : '#4fb3ea', }} variant={ "outlined"} />*/}
+                            {/*        <Chip label="TI-RADS 2" sx={{color: !this.state.tiradsType[1]? '#949494' : '#4fb3ea', borderColor: !this.state.tiradsType[1]? '#949494' : '#4fb3ea', }} variant={"outlined"} />*/}
+                            {/*        <Chip label="TI-RADS 3" sx={{color: !this.state.tiradsType[2]? '#949494' : '#4fb3ea', borderColor: !this.state.tiradsType[2]? '#949494' : '#4fb3ea', }} variant={"outlined"} />*/}
+                            {/*        <Chip label="TI-RADS 4" sx={{color: !this.state.tiradsType[3]? '#949494' : '#4fb3ea', borderColor: !this.state.tiradsType[3]? '#949494' : '#4fb3ea', }} variant={"outlined"} />*/}
+                            {/*        <Chip label="TI-RADS 5" sx={{color: !this.state.tiradsType[4]? '#949494' : '#4fb3ea', borderColor: !this.state.tiradsType[4]? '#949494' : '#4fb3ea', }} variant={"outlined"} />*/}
+                                </Stack>
+
+
+                                handleNoduleType = (event, index) => {
+                                        //console.info(this.state.tiradsType)
+                                        this.state.predictedTypes[index].nodule_type = event.target.value
+                                    }
+                                    handleNoduleWidth = () => {
+                                        this.setState({
+                                            tiradsType: [this.state.tiradsType[0], !this.state.tiradsType[1], this.state.tiradsType[2], this.state.tiradsType[3], this.state.tiradsType[4] ]
+                                        })
+                                    }
+                                    handleNoduleHeight = () => {
+                                        this.setState({
+                                            tiradsType: [this.state.tiradsType[0], this.state.tiradsType[1], !this.state.tiradsType[2], this.state.tiradsType[3], this.state.tiradsType[4] ]
+                                        })
+                                    }
+                                    handleNoduleLength = () => {
+                                        this.setState({
+                                            tiradsType: [this.state.tiradsType[0], this.state.tiradsType[1], this.state.tiradsType[2], !this.state.tiradsType[3], this.state.tiradsType[4] ]
+                                        })
+                                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+[{"type":"Annotation",
+  "body":[{
+    "type":"TextualBody","value":"f","purpose":"commenting"},
+    {"type":"TextualBody","value":"f1","purpose":"tagging"}],
+  "target":{"source":"http://localhost:3000/result/undefined",
+            "selector":{"type":"SvgSelector","value":"<svg><polygon points=\"119109.7578125,43382.37109375 120298.1953125,43249.25 127468.4609375,58359.37890625 89133.8671875,75417.265625 92952.3125,49588.875 93631.3515625,49333.9921875 93605.46875,49220.81640625\"></polygon></svg>"}},
+  "@context":"http://www.w3.org/ns/anno.jsonld","id":"#9d21ce61-4d69-4b4f-af39-aa797d35ce58"},
+  {"type":"Annotation",
+    "body":[{
+      "type":"TextualBody","value":"f","purpose":"commenting"},
+      {"type":"TextualBody","value":"f1","purpose":"tagging"}],
+    "target":{"source":"http://localhost:3000/result/undefined",
+      "selector":{"type":"SvgSelector","value":"<svg><polygon points=\"141543.875,26231.2890625 143014.59375,27077.32421875 158580.84375,62708.0703125 142804.015625,61188.44921875 125799.3828125,29211.849609375 133858.5,19162.193359375 134048.734375,19045.2109375 134005.71875,18990.048828125\"></polygon></svg>"}},
+    "@context":"http://www.w3.org/ns/anno.jsonld","id":"#5d6be2a1-7933-4eed-825f-3e4b63df7b24"}
+  ]
