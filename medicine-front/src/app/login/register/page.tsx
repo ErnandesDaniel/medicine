@@ -29,7 +29,7 @@ export default function Auth() {
     return(
         <>
 
-            <Flex style={{marginTop:"100px",}} wrap justify='space-around'>
+            <Flex className='page' wrap justify='space-around'>
 
                 <div style={{
                     fontSize:"40px",

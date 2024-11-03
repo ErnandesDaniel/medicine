@@ -5,18 +5,22 @@ import Button from "@/components/Button";
 import Link from "next/link";
 import {useCallback, useState} from "react";
 import Spacer from "@/components/Spacer";
+import { useRouter } from 'next/navigation';
 
 export default function Auth() {
 
+    const router = useRouter();
+
     const onFinish=useCallback((values)=>{
         console.log(values);
+        router.push('/upload_photo');
 
-    },[]);
+    },[router]);
 
     return(
 <>
 
-    <Flex style={{marginTop:"100px",}} wrap justify='space-around'>
+    <Flex className='page' wrap justify='space-around'>
 
         <div style={{
             fontSize:"40px",
