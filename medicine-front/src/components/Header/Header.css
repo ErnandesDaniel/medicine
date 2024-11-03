@@ -1,6 +1,8 @@
 .header{
-
+    position:sticky;
+    top:0;
     height: 50px;
+    z-index:2;
     background: #039;
     color:white;
     display:flex;
