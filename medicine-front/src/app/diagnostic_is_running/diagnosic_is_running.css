@@ -11,23 +11,3 @@
     text-align:center;
     line-height:30px;
 }
-
-
-
-
-
-
-
-
-.download_button{
-    width:350px;
-    height:50px;
-    background: blue;
-    color:white;
-    cursor:pointer;
-    font-family: Arial, serif;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    border-radius: 10px;
-}

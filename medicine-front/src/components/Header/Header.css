@@ -19,7 +19,8 @@
         width:100%;
 
         .siteTitle{
-
+            width:70px;
+            text-align:center;
         }
 
         .linkBlock{
@@ -32,11 +33,16 @@
                 margin-left:20px;
                 margin-right:20px;
                 cursor:pointer;
+                color:white;
+                &>a{
+                    color:white;
+                }
             }
         }
 
         .outLink{
             cursor:pointer;
+            color:white;
         }
     }
 }

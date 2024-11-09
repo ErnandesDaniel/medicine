@@ -1,6 +1,7 @@
 .page{
 
-    height:calc(100% - 240px);
+    min-height:calc(100% - 240px);
     padding-top:20px;
+    padding-bottom:20px;
     //background: yellow;
 }

@@ -1,11 +1,11 @@
 "use client"
-import Text from "@/components/Text";
+import Text from "@/components/Universal/Text/Text";
 import "./diagnosic_is_running.css";
 import { Flex, Spin } from "antd";
-import Spacer from "@/components/Spacer";
+import Spacer from "@/components/Universal/Spacer/Spacer";
 import {useRouter} from "next/navigation";
 import { ConfigProvider } from 'antd';
-import Button from "@/components/Button";
+import Button from "@/components/Universal/Button/Button";
 
 export default function DiagnosisIsRunning() {
 

@@ -1,10 +1,10 @@
 "use client"
 import {Flex, Form} from "antd";
-import TextField from "@/components/TextField";
-import Button from "@/components/Button";
+import TextField from "@/components/Universal/TextField/TextField";
+import Button from "@/components/Universal/Button/Button";
 import Link from "next/link";
 import {useCallback, useState} from "react";
-import Spacer from "@/components/Spacer";
+import Spacer from "@/components/Universal/Spacer/Spacer";
 import { useRouter } from 'next/navigation';
 
 export default function Auth() {

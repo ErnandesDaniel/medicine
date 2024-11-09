@@ -1,4 +1,6 @@
 .footer{
+    position: relative;
+    z-index:2;
     min-height: 300px;
     background: #039;
     color:white;

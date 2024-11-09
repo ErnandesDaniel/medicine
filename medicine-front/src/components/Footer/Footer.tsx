@@ -1,7 +1,7 @@
 "use client"
 import "./Footer.css";
-import Spacer from "@/components/Spacer";
-import Text from "@/components/Text";
+import Spacer from "@/components/Universal/Spacer/Spacer";
+import Text from "@/components/Universal/Text/Text";
 export default function Footer() {
     return (
         <div className='footer'>
