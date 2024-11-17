@@ -19,7 +19,7 @@ export default function Header() {
            <Text className='siteTitle'>MedML</Text>
            <div className='linkBlock'>
                <Text className='link'><Link href="/upload_photo">Добавить снимок</Link></Text>
-               <Text className='link'>Пациенты</Text>
+               <Text className='link'><Link href="/patients">Пациенты</Link></Text>
                <Text className='link'>Почта</Text>
            </div>
            <Text className='outLink'><span onClick={exit}>Выйти</span></Text>

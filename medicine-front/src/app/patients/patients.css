@@ -1,0 +1,11 @@
+.patients_page{
+    padding:30px;
+    font-family:Arial, serif;
+}
+
+.table_button{
+
+    color:blue;
+    cursor:pointer;
+    text-align:center;
+}

@@ -1,0 +1,87 @@
+import "./addPatientModal.css";
+import Spacer from "@/components/Universal/Spacer/Spacer";
+import Button from "@/components/Universal/Button/Button";
+import { Modal, Form } from 'antd';
+import { Flex } from "antd";
+import TextField from "@/components/Universal/TextField/TextField";
+import { DatePicker } from "antd";
+import {useMemo} from "react";
+const {Item} =Form;
+
+export default function AddPatientModal({ModalFinish, isModalOpen, handleCancel }) {
+
+    const { rules }=useMemo(()=>({
+        rules: [{
+            required: true,
+            message: 'Введите день рождения пациента',
+            type: 'string',
+            validator: (_, value) => !value ?
+                Promise.reject(new Error('Введите день рождения пациента')) :
+                Promise.resolve()
+        }]
+
+    }),[]);
+
+    return (
+        <Modal title="Создание карты" open={isModalOpen} onCancel={handleCancel} footer={null} width={600} destroyOnClose={true}>
+            <Form onFinish={ModalFinish} layout='vertical'>
+                <Flex className='modal_form' gap={10} vertical>
+                    <Spacer space={0} />
+                    <TextField
+                        errorText='Введите фамилию пациента'
+                        name="surname"
+                        required
+                        label="Фамилия"
+                    />
+                    <TextField
+                        errorText='Введите имя пациента'
+                        name="name"
+                        required
+                        label="Имя"
+                    />
+                    <TextField
+                        errorText='Введите отчество пациента'
+                        name="patronymic"
+                        required
+                        label="Отчество"
+                    />
+                    <TextField
+                        errorText='Введите полис пациента'
+                        name="polis"
+                        required
+                        label="Полис ОМС"
+                    />
+                    <TextField
+                        errorText='Введите email пациента'
+                        name="email"
+                        required
+                        label="Электронная почта"
+                    />
+
+                    <Item rules={rules} name='birthdayDate' label="День рождения пациента">
+                        <DatePicker style={{width:'100%'}} size='large'/>
+                    </Item>
+
+                    <TextField
+                        errorText='Введите диагноз пациента'
+                        name="diagnosis"
+                        required
+                        label="Диагноз"
+                    />
+
+                    <Spacer space={0} />
+
+                </Flex>
+                <Spacer space={15} />
+                <Flex className='modal_buttons' gap={10} justify='end'>
+                    <Button  onClick={handleCancel} width={20} title='Отменить' type='default' className='button' block={false}/>
+                    <Button  width={20} title='Начать' htmlType="submit" type='primary' block={false}/>
+                </Flex>
+            </Form>
+        </Modal>
+
+
+
+    )
+}
+
