@@ -11,6 +11,7 @@ interface TextFieldProps {
     isRequired:boolean,
     label:string,
     name:string
+    rulesType:string;
 }
 
 const  TextField=({
@@ -20,17 +21,25 @@ const  TextField=({
     isPassword=false,
     isRequired=true,
     label,
+    rulesType='string',
     name,}:TextFieldProps)=>{
 
     const { rules }=useMemo(()=>({
             rules: [{
                 required: isRequired,
                 message: errorText,
-                type: 'string',
                 validator: (_, value) => isError || (isRequired && !value) ?
                     Promise.reject(new Error(errorText)) :
                     Promise.resolve()
-            }]
+            },
+
+            ...rulesType=='email' ? [
+                {
+                    type: 'email',
+                    message: 'Некорректный email адрес',
+                }
+            ]:[]
+            ]
 
         }),[isError, errorText, isRequired])
 

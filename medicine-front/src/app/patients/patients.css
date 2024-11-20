@@ -9,3 +9,13 @@
     cursor:pointer;
     text-align:center;
 }
+
+.medical_organization_title{
+    color:gray;
+}
+
+.medical_organization_edit_icon{
+    cursor:pointer;
+    font-size:20px;
+    color:blue !important;
+}

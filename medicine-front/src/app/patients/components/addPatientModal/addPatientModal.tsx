@@ -1,3 +1,4 @@
+'use client'
 import "./addPatientModal.css";
 import Spacer from "@/components/Universal/Spacer/Spacer";
 import Button from "@/components/Universal/Button/Button";
@@ -7,16 +8,20 @@ import TextField from "@/components/Universal/TextField/TextField";
 import { DatePicker } from "antd";
 import {useMemo} from "react";
 const {Item} =Form;
+import ConfigProvider from 'antd/es/config-provider';
+import locale from 'antd/locale/ru_RU';
+
+
 
 export default function AddPatientModal({ModalFinish, isModalOpen, handleCancel }) {
 
     const { rules }=useMemo(()=>({
         rules: [{
             required: true,
-            message: 'Введите день рождения пациента',
+            message: 'Введите дату рождения пациента',
             type: 'string',
             validator: (_, value) => !value ?
-                Promise.reject(new Error('Введите день рождения пациента')) :
+                Promise.reject(new Error('Введите дату рождения пациента')) :
                 Promise.resolve()
         }]
 
@@ -25,7 +30,7 @@ export default function AddPatientModal({ModalFinish, isModalOpen, handleCancel 
     return (
         <Modal title="Создание карты" open={isModalOpen} onCancel={handleCancel} footer={null} width={600} destroyOnClose={true}>
             <Form onFinish={ModalFinish} layout='vertical'>
-                <Flex className='modal_form' gap={10} vertical>
+                <Flex className='modal_form' vertical>
                     <Spacer space={0} />
                     <TextField
                         errorText='Введите фамилию пациента'
@@ -56,11 +61,14 @@ export default function AddPatientModal({ModalFinish, isModalOpen, handleCancel 
                         name="email"
                         required
                         label="Электронная почта"
+                        rulesType='email'
                     />
 
-                    <Item rules={rules} name='birthdayDate' label="День рождения пациента">
-                        <DatePicker style={{width:'100%'}} size='large'/>
-                    </Item>
+                    <ConfigProvider locale={locale}>
+                        <Item rules={rules} name='birthdayDate' label="Дата рождения пациента">
+                            <DatePicker style={{width:'100%'}} size='large'/>
+                        </Item>
+                    </ConfigProvider>
 
                     <TextField
                         errorText='Введите диагноз пациента'

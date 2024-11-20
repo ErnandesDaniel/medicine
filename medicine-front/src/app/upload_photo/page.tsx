@@ -96,7 +96,7 @@ export default function UploadPhoto() {
         <Spacer space={20} />
         <Dragger {...props} className='download_area'>
             <Spacer space={20} />
-            <p className="ant-upload-drag-icon"><InboxOutlined className='download_area_img' /></p>
+            <p className="ant-upload-drag-icon"><InboxOutlined/></p>
             <Spacer space={20} />
             <p className="ant-upload-text">Нажмите или перетащите файл в эту область для загрузки</p>
             <Spacer space={10} />

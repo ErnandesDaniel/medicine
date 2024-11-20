@@ -9,7 +9,7 @@ import { Flex } from "antd";
 import { ConfigProvider } from 'antd';
 import {useMemo} from "react";
 
-export default function DeletePatientModal({ModalFinish, isModalOpen, handleCancel }){
+export default function DeletePatientModal({ModalFinish, isModalOpen, handleCancel, patients, deletingPatientId }){
 
     const { rules }=useMemo(()=>({
         rules: [{
@@ -22,6 +22,13 @@ export default function DeletePatientModal({ModalFinish, isModalOpen, handleCanc
         }]
 
     }),[]);
+
+
+    const [form] = Form.useForm();
+    const checked = Form.useWatch('checkbox', form);
+
+
+    const patientFullName=patients.find(({key})=>key==deletingPatientId).patientFullName;
 
         return(
 
@@ -53,10 +60,10 @@ export default function DeletePatientModal({ModalFinish, isModalOpen, handleCanc
 
         <Modal title="Удаление карты" open={isModalOpen} onCancel={handleCancel} footer={null} width={600} destroyOnClose={true}>
             <Spacer space={15} />
-            <Form onFinish={ModalFinish}>
+            <Form onFinish={ModalFinish} form={form}>
                 <Flex className='modal_form' vertical>
                     <Spacer space={15} />
-                    <Text>Вы уверены, что хотите удалить карту Иванова Ивана Ивановича?</Text>
+                    <Text>Вы уверены, что хотите удалить карту {patientFullName}?</Text>
                     <Spacer space={15} />
                     <Item layout='vertical' rules={rules} name='checkbox'  valuePropName="checked">
                         <Checkbox>Подтверждаю удаление карты</Checkbox>
@@ -66,7 +73,7 @@ export default function DeletePatientModal({ModalFinish, isModalOpen, handleCanc
                 <Spacer space={15} />
                 <Flex className='modal_buttons' gap={10} justify='end'>
                     <Button  onClick={handleCancel} width={20} title='Отменить' type='default' className='button' block={false}/>
-                    <Button  className='delete_button' width={20} title='Удалить' htmlType="submit" type='primary' block={false}/>
+                    <Button  className='delete_button' width={20} title='Удалить' htmlType="submit" type='primary' block={false} disabled={!checked}/>
                 </Flex>
             </Form>
         </Modal>

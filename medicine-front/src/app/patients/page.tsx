@@ -12,6 +12,7 @@ import type { TableProps } from 'antd';
 import Spacer from "@/components/Universal/Spacer/Spacer";
 import DeletePatientModal from "@/app/patients/components/deletePatientModal/deletePatientModal";
 import AddPatientModal from "@/app/patients/components/addPatientModal/addPatientModal";
+import {EditOutlined, PlusOutlined} from "@ant-design/icons";
 const {Search}=Input;
 
 export default function Patients() {
@@ -144,15 +145,16 @@ export default function Patients() {
 
     return(<Page className='patients_page'>
         <Flex gap={10}>
-            <Text fontSize={20}>Цигулева Ксения Владимировна</Text>
-            <Text fontSize={20}>НИЯУ МИФИ</Text>
+            <Text fontSize={20}>Цыгулева Ксения Владимировна</Text>
+            <Text fontSize={20} className='medical_organization_title'>НИЯУ МИФИ</Text>
+            <EditOutlined className='medical_organization_edit_icon' />
         </Flex>
         <Spacer space={20} />
         <Flex justify='space-between' aling='center'>
             <Text fontSize={20}>Пациенты</Text>
             <Flex gap={20}>
                 <Search placeholder='Поиск по картам'/>
-                <Button onClick={showModalAddPatient} title='+ Добавить карту' />
+                <Button onClick={showModalAddPatient} title={<><PlusOutlined /> Добавить карту</>}/>
             </Flex>
         </Flex>
         <Spacer space={20} />
@@ -167,6 +169,7 @@ export default function Patients() {
             isModalOpen={isModalOpenDeletePatient}
             handleCancel={handleCancelDeletePatient}
             deletingPatientId={deletingPatientId}
+            patients={dataSource}
         />
 
         <AddPatientModal

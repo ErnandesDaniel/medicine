@@ -11,15 +11,25 @@ export default function FormButton({
     block,
     width=100,
     onClick,
+    disabled,
     }:{
-    title:string;
+    title:any;
     type?:any;
     htmlType?:any;
     className?:string;
     block?:boolean;
     width?:number;
     onClick?:any;
+    disabled?,
     }) {
-    return(<Button onClick={onClick} style={{width:`${width}%`, display:'block'}} type={type} size={size} htmlType={htmlType} className={className} block={block}>{title}</Button>)
+    return(<Button onClick={onClick} style={{width:`${width}%`, display:'block'}}
+                   type={type}
+                   size={size}
+                   htmlType={htmlType}
+                   className={className}
+                   block={block}
+                   disabled={disabled}
+
+    >{title}</Button>)
 }
 
