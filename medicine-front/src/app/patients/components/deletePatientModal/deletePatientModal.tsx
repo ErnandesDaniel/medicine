@@ -28,7 +28,7 @@ export default function DeletePatientModal({ModalFinish, isModalOpen, handleCanc
     const checked = Form.useWatch('checkbox', form);
 
 
-    const patientFullName=patients.find(({key})=>key==deletingPatientId).patientFullName;
+    const patientFullName=patients.find(({key})=>key==deletingPatientId)?.patientFullName;
 
         return(
 
