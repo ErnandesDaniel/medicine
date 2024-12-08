@@ -62,11 +62,11 @@ export default function DiagnosticDrawer({DrawerFinish, isDrawerOpen, handleCanc
                                 <div className='year'>{year} год</div>
                                 {diagnostics.map(({date,projectionType, euTirads})=>{
                                     return(
-                                        <div className='diagnosticsBlock'>
+                                        <Flex className='diagnosticsBlock' vertical gap={10}>
                                             <div className='date'>Дата: <span className='border'>{dayjs(date).format('DD.MM.YYYY')}</span></div>
                                             <div className='projectionType'>Тип проекции: <span className='border'>{projectionType}</span></div>
                                             <div className='euTirads'>EU-TIRADS: <span className='border'>{euTirads}</span></div>
-                                        </div>);
+                                        </Flex>);
                                 })}
                             </div>
 

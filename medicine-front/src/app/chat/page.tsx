@@ -10,7 +10,6 @@ import dayjs, { Dayjs } from "dayjs";
 import clsx from 'clsx';
 import {LeftOutlined, SendOutlined} from "@ant-design/icons";
 import DiagnosticDrawer from "@/app/chat/DiagnosticDrawer/DiagnosticDrawer";
-import UploadPhotoModal from "@/components/Modals/UploadPhoto/UploadPhotoModal";
 const {TextArea}=Input;
 const {Item, useWatch, useForm} =Form;
 
@@ -64,17 +63,6 @@ export default function Chat() {
 
     }, [textarea_message, setMessages, form]);
 
-
-
-
-
-
-
-
-
-
-
-
     const [isDrawerOpen, setIsDrawerOpen]=useState<boolean>();
 
     const showDrawer = useCallback(() => {
@@ -107,9 +95,6 @@ export default function Chat() {
             <LeftOutlined />
             <p>Просмотр диагностик</p>
         </Button>
-
-
-
 
         <div className='message_list_container'>
             <Flex gap={20} className='message_list' vertical>
