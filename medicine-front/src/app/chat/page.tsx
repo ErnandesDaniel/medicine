@@ -3,11 +3,14 @@ import "./chat.css";
 import Page from "@/components/Page/Page";
 import React, {useCallback, useEffect, useState} from "react";
 import Flex from 'antd/es/flex';
+import Button from 'antd/es/button';
 import Form from 'antd/es/form';
 import Input from 'antd/es/input';
 import dayjs, { Dayjs } from "dayjs";
 import clsx from 'clsx';
-import {SendOutlined} from "@ant-design/icons";
+import {LeftOutlined, SendOutlined} from "@ant-design/icons";
+import DiagnosticModal from "@/app/chat/DiagnosticModal/DiagnosticModal";
+import UploadPhotoModal from "@/components/Modals/UploadPhoto/UploadPhotoModal";
 const {TextArea}=Input;
 const {Item, useWatch, useForm} =Form;
 
@@ -62,7 +65,51 @@ export default function Chat() {
     }, [textarea_message, setMessages, form]);
 
 
+
+
+
+
+
+
+
+
+
+
+    const [isModalOpen, setIsModalOpen]=useState<boolean>();
+
+    const showModal = useCallback(() => {
+        setIsModalOpen(true);
+    },[setIsModalOpen]);
+
+    const handleOk = useCallback(() => {
+        setIsModalOpen(false);
+        //router.push('/diagnostic_is_running');
+    },[setIsModalOpen]);
+
+    const handleCancel = useCallback(() => {
+        setIsModalOpen(false);
+    },[setIsModalOpen]);
+
+    const ModalFinish = useCallback(() => {
+        handleOk();
+    },[handleOk]);
+
     return(<Page className='chat_page'>
+
+        <DiagnosticModal
+            ModalFinish={ModalFinish}
+            isModalOpen={isModalOpen}
+            handleCancel={handleCancel}
+            handleOk={handleOk}
+        />
+
+        <Button className='viewing_diagnostics_button' gap={10} type='primary' onClick={showModal}>
+            <LeftOutlined />
+            <p>Просмотр диагностик</p>
+        </Button>
+
+
+
 
         <div className='message_list_container'>
             <Flex gap={20} className='message_list' vertical>

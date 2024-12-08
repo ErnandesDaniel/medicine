@@ -1,6 +1,17 @@
 
 .chat_page {
     height: calc(100% - 200px);
+    padding-top:calc(50px + 15px);
+
+    .viewing_diagnostics_button{
+
+        position:fixed;
+        top:calc(50px + 15px);
+        right:calc(30px + 30px);
+        cursor:pointer;
+        background: blue;
+        font-family: Arial, serif;
+    }
 
     .message_list_container{
         overflow-y: scroll;
@@ -55,8 +66,7 @@
     .input_content{
         bottom:0;
         height:140px;
-        padding-top:10px;
-        padding-bottom:10px;
+        padding: 10px 20px;
 
         .textarea_item {
             width:100%;

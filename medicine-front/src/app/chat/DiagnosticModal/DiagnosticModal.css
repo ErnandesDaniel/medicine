@@ -1,0 +1,24 @@
+.diagnostics_modal{
+    position:relative;
+    top:150px;
+
+    .yearDiagnostics{
+
+        .year{
+            color: gray;
+            margin-bottom:10px;
+        }
+
+        .diagnosticsBlock{
+
+            background: #f0f0f0;
+            margin-bottom:20px;
+            padding:10px;
+            border-radius: 10px;
+
+            .border{
+                font-weight:bold;
+            }
+        }
+    }
+}
