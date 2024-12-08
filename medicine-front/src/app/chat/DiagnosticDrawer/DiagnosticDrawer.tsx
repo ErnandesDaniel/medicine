@@ -1,10 +1,9 @@
-import './DiagnosticModal.css'
+import './DiagnosticDrawer.css'
 import Button from "@/components/Universal/Button/Button";
-import { Modal, Flex } from 'antd';
-import { CloseOutlined } from "@ant-design/icons";
+import { Flex, Drawer } from 'antd';
 import dayjs from "dayjs";
 
-export default function DiagnosticModal({ModalFinish, isModalOpen, handleCancel }) {
+export default function DiagnosticDrawer({DrawerFinish, isDrawerOpen, handleCancel }) {
 
     const yearDiagnostics =[
         {
@@ -41,28 +40,18 @@ export default function DiagnosticModal({ModalFinish, isModalOpen, handleCancel 
     ];
 
     return (
-
-        <Modal
-            className='diagnostics_modal'
+        <Drawer
+            className='diagnostics_drawer'
             style={{marginRight:'0'}}
-            title={<Flex gap={10}><CloseOutlined
-                style={{cursor:'pointer'}}
-                onClick={handleCancel}
-
-
-            /><p>Диагностики пациента</p>
-
-            <Button  onClick={handleCancel} width={20} title='Отмена' type='default' className='button' block={false}/>
-            <Button  onClick={ModalFinish} width={20} title='Ок' htmlType="submit" type='primary' block={false}/>
-
-        </Flex>}
-            open={isModalOpen}
-            onCancel={handleCancel}
-            footer={null}
-            width={450}
-            closable={false}
+            open={isDrawerOpen}
+            onClose={handleCancel}
+            title={<Flex gap={10}>
+                    <p>Диагностики пациента</p>
+                    <Button  onClick={handleCancel} width={22} title='Отмена' type='default' className='button' block={false}/>
+                    <Button  onClick={DrawerFinish} width={20} title='Ок' htmlType="submit" type='primary' block={false}/>
+                </Flex>}
+            width={480}
             destroyOnClose={true}>
-
             <div>
                 {
                     yearDiagnostics.map(({year, diagnostics})=>{
@@ -85,7 +74,7 @@ export default function DiagnosticModal({ModalFinish, isModalOpen, handleCancel 
                     })
                 }
             </div>
-        </Modal>
+        </Drawer>
     )
 }
 

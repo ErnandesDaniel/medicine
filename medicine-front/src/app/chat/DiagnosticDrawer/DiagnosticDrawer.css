@@ -1,18 +1,15 @@
-.diagnostics_modal{
-    position:relative;
-    top:150px;
-
+.diagnostics_drawer{
     .yearDiagnostics{
 
         .year{
             color: gray;
-            margin-bottom:10px;
+            margin-bottom:20px;
         }
 
         .diagnosticsBlock{
 
             background: #f0f0f0;
-            margin-bottom:20px;
+            margin-bottom:25px;
             padding:10px;
             border-radius: 10px;
 

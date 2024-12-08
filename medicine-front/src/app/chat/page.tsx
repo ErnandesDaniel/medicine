@@ -9,7 +9,7 @@ import Input from 'antd/es/input';
 import dayjs, { Dayjs } from "dayjs";
 import clsx from 'clsx';
 import {LeftOutlined, SendOutlined} from "@ant-design/icons";
-import DiagnosticModal from "@/app/chat/DiagnosticModal/DiagnosticModal";
+import DiagnosticDrawer from "@/app/chat/DiagnosticDrawer/DiagnosticDrawer";
 import UploadPhotoModal from "@/components/Modals/UploadPhoto/UploadPhotoModal";
 const {TextArea}=Input;
 const {Item, useWatch, useForm} =Form;
@@ -75,35 +75,35 @@ export default function Chat() {
 
 
 
-    const [isModalOpen, setIsModalOpen]=useState<boolean>();
+    const [isDrawerOpen, setIsDrawerOpen]=useState<boolean>();
 
-    const showModal = useCallback(() => {
-        setIsModalOpen(true);
-    },[setIsModalOpen]);
+    const showDrawer = useCallback(() => {
+        setIsDrawerOpen(true);
+    },[setIsDrawerOpen]);
 
     const handleOk = useCallback(() => {
-        setIsModalOpen(false);
+        setIsDrawerOpen(false);
         //router.push('/diagnostic_is_running');
-    },[setIsModalOpen]);
+    },[setIsDrawerOpen]);
 
     const handleCancel = useCallback(() => {
-        setIsModalOpen(false);
-    },[setIsModalOpen]);
+        setIsDrawerOpen(false);
+    },[setIsDrawerOpen]);
 
-    const ModalFinish = useCallback(() => {
+    const DrawerFinish = useCallback(() => {
         handleOk();
     },[handleOk]);
 
     return(<Page className='chat_page'>
 
-        <DiagnosticModal
-            ModalFinish={ModalFinish}
-            isModalOpen={isModalOpen}
+        <DiagnosticDrawer
+            DrawerFinish={DrawerFinish}
+            isDrawerOpen={isDrawerOpen}
             handleCancel={handleCancel}
             handleOk={handleOk}
         />
 
-        <Button className='viewing_diagnostics_button' gap={10} type='primary' onClick={showModal}>
+        <Button className='viewing_diagnostics_button' gap={10} type='primary' onClick={showDrawer}>
             <LeftOutlined />
             <p>Просмотр диагностик</p>
         </Button>
